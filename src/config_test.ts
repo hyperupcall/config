@@ -4,7 +4,8 @@ import { Config } from "./config.ts"
 
 const { test } = Deno
 
-const _dirname = path.dirname(new URL(import.meta.url).pathname)
+let _dirname = path.dirname(new URL(import.meta.url).pathname);
+if (Deno.build.os == "windows") _dirname = _dirname.slice(1);
 const testDir = (fixturesDir: string): string => path.join(_dirname, 'fixtures', fixturesDir)
 
 const moduleFileEndings = [

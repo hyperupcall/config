@@ -1,0 +1,7 @@
+scripts:
+  start: deno run src/main.ts
+  test:
+    cmd: deno test
+    allow:
+      - run
+      - read

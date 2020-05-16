@@ -5,35 +5,42 @@ import * as toml from "https://deno.land/x/std@0.51.0/encoding/toml.ts"
 
 /**
  * user options
+ * includeDefault is only relevant to es modules (when loading js/ts files)
  */
 interface ILoadOptions {
-  readonly searchDir: string,
-  readonly file: string
+  readonly searchDir?: string,
+  readonly file: string,
+  readonly includeDefault?: boolean
 }
 
 /**
  * internal representation of config files
  */
-type configFileFormat = "module" | "toml" | "json" | "yaml"
+export type configFileFormat = "module" | "toml" | "json" | "yaml"
 interface IConfigFile {
   readonly type: configFileFormat;
   readonly fileName: string;
 }
 
 export class Config {
-  private static async actuallyLoad(searchDir: string, configFile: IConfigFile): Promise<object | undefined> {
+  private static async actuallyLoad({
+    searchDir = Deno.cwd(),
+    includeDefault = false
+  }: ILoadOptions, configFile: IConfigFile): Promise<object | undefined> {
     const configFilePath = path.join(searchDir, configFile.fileName)
 
     if (configFile.type === "module") {
-      return await import(configFilePath);
+      const config = await import(configFilePath);
+      if (includeDefault) return config
+      return config.default
     } else if (configFile.type === "toml") {
       const content = await Deno.readTextFile(configFilePath)
       return toml.parse(content)
     } else if (configFile.type === "yaml") {
       const content = await Deno.readTextFile(configFilePath)
-      return yaml.parse(content)
+      return yaml.parse(content) as object
     } else if (configFile.type === "json") {
-      return await fs.readJson(configFilePath);
+      return await fs.readJson(configFilePath) as object
     }
   }
 
@@ -57,7 +64,7 @@ export class Config {
 
     searchForConfig: for(const configFile of configFiles) {
       try {
-        return await this.actuallyLoad(opts.searchDir || Deno.cwd(), configFile)
+        return await this.actuallyLoad(opts, configFile)
       } catch {}
     }
     // no configuration files found

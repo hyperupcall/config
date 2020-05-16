@@ -33,7 +33,7 @@ for (const moduleFileEnding of moduleFileEndings) {
  */
 for (const moduleFileEnding of moduleFileEndings) {
   test({
-    name: `module find ${moduleFileEnding} config`,
+    name: `module find ${moduleFileEnding} config with incldueDefault enabled`,
     async fn(): Promise<void> {
       const config = await Config.load({
         searchDir: testDir(moduleFileEnding),

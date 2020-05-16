@@ -28,6 +28,7 @@ export class Config {
     includeDefault = false
   }: ILoadOptions, configFile: IConfigFile): Promise<object | undefined> {
     const configFilePath = path.join(searchDir, configFile.fileName)
+    if (Deno.build.os === "windows") configFilePath.slice(1);
 
     if (configFile.type === "module") {
       const config = await import(configFilePath);

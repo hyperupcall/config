@@ -5,7 +5,7 @@ A deno module that helps you load configuration.
 ## Usage
 
 ```ts
-import { Config } from "https://raw.githubusercontent.com/eankeen/config/dev/mod.ts"
+import { Config } from "https://raw.githubusercontent.com/eankeen/config/master/mod.ts"
 
 Config.load({
   file: 'fileName'

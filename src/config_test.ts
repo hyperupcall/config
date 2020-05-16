@@ -13,7 +13,7 @@ const moduleFileEndings = [
 ]
 for (const moduleFileEnding of moduleFileEndings) {
   test({
-    name: `finds dot ${moduleFileEnding} file ending`,
+    name: `module find ${moduleFileEnding} config`,
     async fn(): Promise<void> {
       const config = await Config.load({
         searchDir: testDir(moduleFileEnding),
@@ -33,7 +33,7 @@ for (const moduleFileEnding of moduleFileEndings) {
  */
 for (const moduleFileEnding of moduleFileEndings) {
   test({
-    name: `finds dot ${moduleFileEnding} file ending with includeDefault enabled`,
+    name: `module find ${moduleFileEnding} config`,
     async fn(): Promise<void> {
       const config = await Config.load({
         searchDir: testDir(moduleFileEnding),
@@ -54,7 +54,7 @@ const dotFiles: string[] = [
 ]
 for (const dotFile of dotFiles) {
   test({
-    name: `find dot config for ${dotFile}`,
+    name: `file find ${dotFile} config`,
     async fn(): Promise<void> {
       const config = await Config.load({
         searchDir: testDir(dotFile),

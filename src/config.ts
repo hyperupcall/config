@@ -27,10 +27,12 @@ export class Config {
     searchDir = Deno.cwd(),
     includeDefault = false
   }: ILoadOptions, configFile: IConfigFile): Promise<object | undefined> {
-    const configFilePath = path.join(searchDir, configFile.fileName)
+    let configFilePath = path.join(searchDir, configFile.fileName)
     if (Deno.build.os === "windows") configFilePath.slice(1);
 
     if (configFile.type === "module") {
+      if (Deno.build.os === "windows")
+        configFilePath = ("\\" + configFilePath).replace('\\', '/')
       const config = await import(configFilePath);
       if (includeDefault) return config
       return config.default

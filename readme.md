@@ -5,14 +5,17 @@ A deno module that helps you load configuration.
 ## Usage
 
 ```ts
-import { Config } from "https://raw.githubusercontent.com/eankeen/config/dev/mod.ts"
+import { Config } from "https://raw.githubusercontent.com/eankeen/config/master/mod.ts"
 
-Config.load({
+const config = await Config.load({
   file: 'fileName'
 })
+if (!config) {
+  console.log("config is 'undefined' when no config files were found")
+}
 
 // example including defaults
-Config.load({
+await Config.load({
   file: 'fileName'
   searchDir: Deno.cwd()
   includeDefault: false

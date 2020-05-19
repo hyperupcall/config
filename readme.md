@@ -1,5 +1,7 @@
 # config
 
+![github workflow status (branch)](https://img.shields.io/github/workflow/status/eankeen/config/test/master) ![github badge](https://img.shields.io/github/license/eankeen/config) ![gitHub issues](https://img.shields.io/github/issues/eankeen/config)
+
 A deno module that helps you load configuration.
 
 ## Usage

@@ -20,7 +20,6 @@ if (!config) {
 await Config.load({
   file: 'fileName'
   searchDir: Deno.cwd()
-  includeDefault: false
 })
 ```
 

@@ -27,27 +27,6 @@ for (const moduleFileEnding of moduleFileEndings) {
   })
 }
 
-/**
- * same as previous, but ensure .default exists
- * when config key is set
- */
-for (const moduleFileEnding of moduleFileEndings) {
-  test({
-    name: `module find ${moduleFileEnding} config with incldueDefault enabled`,
-    async fn(): Promise<void> {
-      const config = await Config.load({
-        searchDir: testDir(moduleFileEnding),
-        file: "file",
-        includeDefault: true
-      });
-
-      assertEquals(config, {
-        default: { name: moduleFileEnding },
-      });
-    },
-  });
-}
-
 
 const dotFiles: string[] = [
   "toml", "yaml", "yml", "json", "toml-config", "yaml-config", "yml-config", "json-config"

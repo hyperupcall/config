@@ -9,8 +9,7 @@ import * as toml from "https://deno.land/x/std@0.51.0/encoding/toml.ts"
  */
 interface ILoadOptions {
   readonly searchDir?: string,
-  readonly file: string,
-  readonly includeDefault?: boolean
+  readonly file: string
 }
 
 /**
@@ -24,8 +23,7 @@ interface IConfigFile {
 
 export class Config {
   private static async actuallyLoad({
-    searchDir = Deno.cwd(),
-    includeDefault = false
+    searchDir = Deno.cwd()
   }: ILoadOptions, configFile: IConfigFile): Promise<object | undefined> {
     let configFilePath = path.join(searchDir, configFile.fileName)
     if (Deno.build.os === "windows") configFilePath.slice(1);
@@ -34,7 +32,6 @@ export class Config {
       if (Deno.build.os === "windows")
         configFilePath = ("\\" + configFilePath).replace('\\', '/')
       const config = await import(configFilePath);
-      if (includeDefault) return config
       return config.default
     } else if (configFile.type === "toml") {
       const content = await Deno.readTextFile(configFilePath)

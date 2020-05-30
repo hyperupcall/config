@@ -7,6 +7,7 @@ A deno module that helps you load configuration.
 ## Usage
 
 ```ts
+// IMPORTANT: recommend pinning to specific version (see below)
 import { Config } from "https://raw.githubusercontent.com/eankeen/config/master/mod.ts"
 
 const config = await Config.load({
@@ -23,11 +24,20 @@ await Config.load({
 })
 ```
 
+### Versions
+
+It's recommended you pin to a specific version of Deno / std that are compatable. here is a version list:
+
+```sh
+# deno 1.0.3 and std v0.53.0
+https://raw.githubusercontent.com/eankeen/config/v1.0.3/mod.ts
+```
+
+
 ### Options
 
 - `file` the name of your file
 - `searchDir` the directory to start searching. this is the directory that might include a `.config` file
-- `includeDefault`, if loading a js/ts module, this determines if you want an object returned that includes the `default` property (might be deprecatead soon)
 
 ### Priority
 

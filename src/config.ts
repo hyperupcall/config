@@ -5,7 +5,6 @@ import * as toml from "https://deno.land/x/std@0.54.0/encoding/toml.ts";
 
 /**
  * user options
- * includeDefault is only relevant to es modules (when loading js/ts files)
  */
 interface ILoadOptions {
   readonly searchDir?: string;

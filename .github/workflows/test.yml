@@ -7,7 +7,6 @@ jobs:
     strategy:
       matrix:
         os: [macOS-latest, ubuntu-latest, windows-latest]
-        deno: [1.0.2]
     env:
       GH_ACTIONS: true
       DENO_BUILD_MODE: release
@@ -17,6 +16,6 @@ jobs:
       - name: Setup Deno
         uses: denolib/setup-deno@master
         with:
-          deno-version: ${{ matrix.deno }}
+          deno-version: 1.0.3
       - name: Tests
-        run: deno test --allow-run --allow-read --unstable
+        run: deno test --allow-read --allow-run --unstable

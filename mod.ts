@@ -1,1 +1,1 @@
-export{ Config } from "./src/config.ts"
+export { Config } from "./src/config.ts";

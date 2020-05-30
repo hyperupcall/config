@@ -1,3 +1,3 @@
 export default {
-  name: "js-config"
-}
+  name: "js-config",
+};

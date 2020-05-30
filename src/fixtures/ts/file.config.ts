@@ -1,3 +1,3 @@
 export default {
-  name: "ts"
-}
+  name: "ts",
+};

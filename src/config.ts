@@ -1,7 +1,7 @@
-import * as path from "https://deno.land/x/std@0.54.0/path/mod.ts";
-import * as fs from "https://deno.land/x/std@0.54.0/fs/mod.ts";
-import * as yaml from "https://deno.land/x/std@0.54.0/encoding/yaml.ts";
-import * as toml from "https://deno.land/x/std@0.54.0/encoding/toml.ts";
+import * as path from "https://deno.land/x/std@0.63.0/path/mod.ts";
+import * as fs from "https://deno.land/x/std@0.63.0/fs/mod.ts";
+import * as yaml from "https://deno.land/x/std@0.63.0/encoding/yaml.ts";
+import * as toml from "https://deno.land/x/std@0.63.0/encoding/toml.ts";
 
 /**
  * user options

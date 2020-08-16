@@ -21,9 +21,10 @@ interface IConfigFile {
 }
 
 export class Config {
-  private static async actuallyLoad({
-    searchDir = Deno.cwd(),
-  }: ILoadOptions, configFile: IConfigFile): Promise<object | undefined> {
+  private static async actuallyLoad(
+    { searchDir = Deno.cwd() }: ILoadOptions,
+    configFile: IConfigFile,
+  ): Promise<object | undefined> {
     let configFilePath = path.join(searchDir, configFile.fileName);
     if (Deno.build.os === "windows") configFilePath.slice(1);
 
@@ -40,7 +41,7 @@ export class Config {
       const content = await Deno.readTextFile(configFilePath);
       return yaml.parse(content) as object;
     } else if (configFile.type === "json") {
-      return await fs.readJson(configFilePath) as object;
+      return (await fs.readJson(configFilePath)) as object;
     }
   }
 

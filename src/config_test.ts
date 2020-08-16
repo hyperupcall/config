@@ -9,12 +9,7 @@ if (Deno.build.os == "windows") _dirname = _dirname.slice(1);
 const testDir = (fixturesDir: string): string =>
   path.join(_dirname, "fixtures", fixturesDir);
 
-const moduleFileEndings = [
-  "js",
-  "ts",
-  "js-config",
-  "ts-config",
-];
+const moduleFileEndings = ["js", "ts", "js-config", "ts-config"];
 for (const moduleFileEnding of moduleFileEndings) {
   test({
     name: `module find ${moduleFileEnding} config`,

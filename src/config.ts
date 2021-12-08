@@ -1,7 +1,7 @@
-import * as path from "https://deno.land/x/std@0.63.0/path/mod.ts";
-import * as fs from "https://deno.land/x/std@0.63.0/fs/mod.ts";
-import * as yaml from "https://deno.land/x/std@0.63.0/encoding/yaml.ts";
-import * as toml from "https://deno.land/x/std@0.63.0/encoding/toml.ts";
+import * as path from "https://deno.land/x/std@0.117.0/path/mod.ts";
+import * as fs from "https://deno.land/x/std@0.117.0/fs/mod.ts";
+import * as yaml from "https://deno.land/x/std@0.117.0/encoding/yaml.ts";
+import * as toml from "https://deno.land/x/std@0.117.0/encoding/toml.ts";
 
 /**
  * user options
@@ -41,7 +41,7 @@ export class Config {
       const content = await Deno.readTextFile(configFilePath);
       return yaml.parse(content) as object;
     } else if (configFile.type === "json") {
-      return (await fs.readJson(configFilePath)) as object;
+      return (JSON.parse(await Deno.readTextFile(configFilePath))) as object;
     }
   }
 

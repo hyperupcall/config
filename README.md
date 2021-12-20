@@ -29,13 +29,9 @@ await Config.load({
 You can pin to a specific version of Deno / std that are compatable. here is a version list:
 
 ```sh
-# eankeen/config v1.1
-# correlates with deno 1.3.0 and std v0.63.0
-https://raw.githubusercontent.com/eankeen/config/v1.1/mod.ts
-
-# eankeen/config 1.0.3
-# correlates with deno 1.0.3 and std v0.53.0
-https://raw.githubusercontent.com/eankeen/config/v1.0.3/mod.ts
+# hyperupcall/config v1.1.1
+# tested with deno 1.17.0 and std v0.117.0
+https://raw.githubusercontent.com/hyperupcall/config/v1.1.1/mod.ts
 ```
 
 ### Options

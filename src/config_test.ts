@@ -1,5 +1,5 @@
-import { assertEquals } from "https://deno.land/x/std@0.63.0/testing/asserts.ts";
-import * as path from "https://deno.land/x/std@0.63.0/path/mod.ts";
+import { path, assertEquals } from "../mod.ts";
+
 import { Config } from "./config.ts";
 
 const { test } = Deno;

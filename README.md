@@ -1,6 +1,6 @@
 # config
 
-![github ci](https://github.com/eankeen/config/workflows/Test%20CI/badge.svg?branch=master) ![github badge](https://img.shields.io/github/license/eankeen/config) ![gitHub issues](https://img.shields.io/github/issues/eankeen/config)
+![github ci](https://github.com/hyperupcall/config/workflows/Test%20CI/badge.svg?branch=master) ![github badge](https://img.shields.io/github/license/hyperupcall/config) ![gitHub issues](https://img.shields.io/github/issues/hyperupcall/config)
 
 A deno module that helps you load configuration.
 
@@ -8,7 +8,7 @@ A deno module that helps you load configuration.
 
 ```ts
 // IMPORTANT: recommend pinning to specific version (see below)
-import { Config } from "https://raw.githubusercontent.com/eankeen/config/master/mod.ts"
+import { Config } from "https://raw.githubusercontent.com/hyperupcall/config/master/mod.ts"
 
 const config = await Config.load({
   file: 'fileName'

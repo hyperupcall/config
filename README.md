@@ -26,7 +26,7 @@ if (!config) {
 
 // Example including defaults
 await Config.load({
-  file: 'fileName'
+  file: 'fileName',
   searchDir: Deno.cwd()
 })
 ```

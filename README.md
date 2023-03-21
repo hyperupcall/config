@@ -29,9 +29,9 @@ await Config.load({
 You can pin to a specific version of Deno / std that are compatable. here is a version list:
 
 ```sh
-# hyperupcall/config v1.2.0
+# hyperupcall/config v1.2.1
 # tested with deno 1.17.0 and std v0.117.0
-https://raw.githubusercontent.com/hyperupcall/config/v1.2.0/mod.ts
+https://raw.githubusercontent.com/hyperupcall/config/v1.2.1/mod.ts
 ```
 
 ### Options

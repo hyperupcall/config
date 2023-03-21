@@ -1,6 +1,6 @@
-import { path, assertEquals } from "../mod.ts";
+import { path, assertEquals } from "../deps.ts";
 
-import { Config } from "./config.ts";
+import { Config } from "../mod.ts";
 
 const { test } = Deno;
 

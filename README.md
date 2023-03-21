@@ -1,15 +1,22 @@
 # config
 
-![github ci](https://github.com/hyperupcall/config/workflows/Test%20CI/badge.svg?branch=master) ![github badge](https://img.shields.io/github/license/hyperupcall/config) ![gitHub issues](https://img.shields.io/github/issues/hyperupcall/config)
+![github ci](https://github.com/hyperupcall/config/workflows/Test%20CI/badge.svg?branch=master)
+![github badge](https://img.shields.io/github/license/hyperupcall/config)
+![gitHub issues](https://img.shields.io/github/issues/hyperupcall/config)
 
 A deno module that helps you load configuration.
+
+> ⚠️ _Warning_ The examples in this README pull from `main`. you may want to "pin"
+> to a particular version by using git tags in the URL to direct you at a particular
+> version. For example, to use version 1.2.1 of `hyperupcall/config`, you would want
+> to import `https://deno.land/x/config@v1.2.1/mod.ts`.
 
 ## Usage
 
 ```ts
-// IMPORTANT: recommend pinning to specific version (see below)
-import { Config } from "https://raw.githubusercontent.com/hyperupcall/config/master/mod.ts"
+import { Config } from "https://deno.land/x/config/mod.ts"
 
+// Example
 const config = await Config.load({
   file: 'fileName'
 })
@@ -17,21 +24,11 @@ if (!config) {
   console.log("config is 'undefined' when no config files were found")
 }
 
-// example including defaults
+// Example including defaults
 await Config.load({
   file: 'fileName'
   searchDir: Deno.cwd()
 })
-```
-
-### Versions
-
-You can pin to a specific version of Deno / std that are compatable. here is a version list:
-
-```sh
-# hyperupcall/config v1.2.1
-# tested with deno 1.17.0 and std v0.117.0
-https://raw.githubusercontent.com/hyperupcall/config/v1.2.1/mod.ts
 ```
 
 ### Options

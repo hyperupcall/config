@@ -8,7 +8,7 @@ A deno module that helps you load configuration.
 
 > ⚠️ _Warning_ The examples in this README pull from `main`. you may want to "pin"
 > to a particular version by using git tags in the URL to direct you at a particular
-> version. For example, to use version 1.2.2 of `hyperupcall/config`, you would want
+> version. For example, to use v1.3.2 of `hyperupcall/config`, you would want
 > to import `https://deno.land/x/config@v1.3.0/mod.ts`.
 
 ## Usage

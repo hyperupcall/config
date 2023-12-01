@@ -1,4 +1,4 @@
-import { path, fs, yaml, toml } from "../deps.ts";
+import { path, yaml, toml } from "../deps.ts";
 
 /**
  * user options
